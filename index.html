@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYAFIORA FLORIST ♡ Handmade Flowers & Gifts</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Syafiora Florist - Handmade flower & gift shop. Buket bunga handmade unik, pot bunga, keychain, dan kado spesial untuk orang tersayang. Pemesanan via WhatsApp.">
+    <meta name="keywords" content="syafiora florist, buket bunga, handmade flower, kado unik, buket wisuda, pot flower, gift box">
+    <meta property="og:title" content="SYAFIORA FLORIST ♡ Handmade Flowers & Gifts">
+    <meta property="og:description" content="Handmade flowers for your favorite people — or yourself ♡">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome & Phosphor Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Scrapbook & Cute Craft Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col selection:bg-pink-300 selection:text-pink-900">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/80 border-b border-pink-200" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-pink-100 border-2 border-pink-400 flex items-center justify-center text-pink-500 text-lg group-hover:rotate-12 transition-transform shadow-sm">
+                    🌸
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-bold text-2xl tracking-wider text-pink-600 flex items-center gap-1">
+                        SYAFIORA <span class="text-xs text-pink-400 font-handwriting text-lg">Florist</span>
+                    </span>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-pink-400 -mt-1">Handmade Flowers ♡</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-700">
+                <a href="#home" class="hover:text-pink-500 transition-colors py-1">Home</a>
+                <a href="#catalog" class="hover:text-pink-500 transition-colors py-1">Katalog</a>
+                <a href="#what-we-make" class="hover:text-pink-500 transition-colors py-1">Kategori</a>
+                <a href="#about" class="hover:text-pink-500 transition-colors py-1">Tentang Kami</a>
+                <a href="#testimonials" class="hover:text-pink-500 transition-colors py-1">Testimoni</a>
+                <a href="#how-to-order" class="hover:text-pink-500 transition-colors py-1">Cara Pesan</a>
+                <a href="#faq" class="hover:text-pink-500 transition-colors py-1">FAQ</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="toggleAdminModal()" class="text-xs bg-pink-50 text-pink-600 hover:bg-pink-100 font-medium px-3 py-2 rounded-full border border-pink-200 transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-gear">="text-[10px]"></i> CMS Admin
+                </button>
+                <a href="https://wa.me/6289612868190?text=Halo%20Syafiora%20Florist!%20%F0%9F%A3%B7%0A%0ASaya%20inbound%20dari%20website%20dan%20ingin%20bertanya-tanya%20seputar%20produk%20bunga%20handmade." target="_blank" class="bg-pink-400 hover:bg-pink-500 text-white font-display font-medium px-5 py-2.5 rounded-full shadow-paper hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 flex items-center gap-2 text-sm">
+                    <span>Pesan Sekarang</span> ♡
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-pink-600 hover:text-pink-800 focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-pink-200 px-6 py-5 shadow-lg space-y-4 font-medium transition-all">
+            <a href="#home" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Home</a>
+            <a href="#catalog" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Katalog Produk</a>
+            <a href="#what-we-make" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Kategori</a>
+            <a href="#custom-order" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Custom Order</a>
+            <a href="#about" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Tentang Kami</a>
+            <a href="#testimonials" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Testimoni</a>
+            <a href="#how-to-order" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">Cara Pesan</a>
+            <a href="#faq" class="block text-gray-700 hover:text-pink-500 py-1" onclick="toggleMobileMenu()">FAQ</a>
+            
+            <div class="pt-4 border-t border-pink-100 flex flex-col gap-2">
+                <button onclick="toggleAdminModal(); toggleMobileMenu();" class="w-full text-center py-2 text-xs bg-pink-50 text-pink-600 rounded-full font-medium">
+                    ⚙️ Buka Admin CMS Preview
+                </button>
+                <a href="https://wa.me/6289612868190?text=Halo%20Syafiora%20Florist!%20%F0%9F%A3%B7%20Saya%20ingin%20memesan%20bunga." target="_blank" class="block text-center bg-pink-400 text-white font-display py-3 rounded-full shadow-paper">
+                    Pesan Sekarang ♡
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section id="home" class="relative pt-8 pb-16 md:py-20 overflow-hidden">
+            <!-- Background Decorative Doodles -->
+            <div class="absolute top-10 left-8 text-pink-300 text-3xl opacity-60 animate-float">✦</div>
+            <div class="absolute bottom-12 left-1/4 text-pink-400 text-4xl opacity-50 font-handwriting">✨</div>
+            <div class="absolute top-24 right-12 text-pink-300 text-5xl opacity-40 animate-float" style="animation-delay: 2s;">🌸</div>
+            <div class="absolute bottom-20 right-1/3 text-pink-400 text-2xl opacity-60">🎀</div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+                        <div class="inline-flex items-center gap-2 bg-pink-100 border border-pink-300 px-4 py-1.5 rounded-full text-pink-700 text-sm font-bold shadow-sm transform -rotate-1">
+                            <span>🌷</span>
+                            <span class="font-handwriting text-xl font-bold">100% Handmade with Love</span>
+                        </div>
+
+                        <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-gray-800 leading-tight">
+                            SEND SOME <br class="hidden sm:inline">
+                            <span class="relative inline-block text-pink-500">
+                                FLOWERS
+                                <svg class="absolute -bottom-2 left-0 w-full h-3 text-pink-300" viewBox="0 0 100 20" preserveAspectRatio="none">
+                                    <path d="M0 15 Q 50 0, 100 15" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </h1>
+
+                        <div class="font-handwriting text-3xl sm:text-4xl text-pink-600 font-bold -rotate-1">
+                            No special occasion? Who cares.
+                        </div>
+
+                        <p class="text-gray-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                            Handmade flowers for your favorite people — or yourself ♡ Hadiah penuh makna yang tidak akan pernah layu untuk mewarnai hari-harimu.
+                        </p>
+
+                        <!-- Call to Action Buttons -->
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#catalog" class="w-full sm:w-auto bg-pink-400 hover:bg-pink-500 text-white font-display font-semibold px-8 py-4 rounded-2xl shadow-paper hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all text-center flex items-center justify-center gap-2">
+                                EXPLORE FLOWERS ♡
+                            </a>
+                            <a href="#custom-order" class="w-full sm:w-auto bg-white hover:bg-pink-50 text-pink-600 border-2 border-pink-300 font-display font-semibold px-7 py-4 rounded-2xl shadow-sm transition-all text-center flex items-center justify-center gap-2">
+                                🎨 CUSTOM ORDER
+                            </a>
+                        </div>
+
+                        <!-- Highlights Banner -->
+                        <div class="pt-6 flex items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-gray-500 font-medium">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-pink-500">✔</span> Custom Warna & Request
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-pink-500">✔</span> Pengiriman Aman
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-pink-500">✔</span> Free Card / Ucapan
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Visual Collage / Poster -->
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <!-- Background Frame Accent -->
+                            <div class="absolute -inset-2 bg-pink-200 rounded-3xl transform rotate-2 shadow-inner"></div>
+                            
+                            <!-- Main Hero Polaroid Image -->
+                            <div class="relative bg-white p-4 rounded-3xl border-2 border-pink-300 shadow-xl transform -rotate-1">
+                                <div class="washi-tape"></div>
+                                <div class="relative aspect-square overflow-hidden rounded-2xl bg-pink-50">
+                                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="Syafiora Bouquet" class="w-full h-full object-cover transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x600/fce7f3/ec4899?text=Syafiora+Flowers'">
+                                    
+                                    <!-- Cute Sticker Badges -->
+                                    <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm border border-pink-300 rounded-full px-3 py-1 text-xs font-handwriting font-bold text-pink-600 shadow">
+                                        ✨ Handmade Craft
+                                    </div>
+                                    <div class="absolute top-3 right-3 bg-pink-400 text-white rounded-full w-12 h-12 flex flex-col items-center justify-center font-display text-[10px] leading-tight font-bold shadow-lg transform rotate-12">
+                                        <span>BEST</span>
+                                        <span>SELLER</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 flex justify-between items-center px-2">
+                                    <div>
+                                        <span class="font-handwriting text-2xl font-bold text-gray-800">Pastel Bloom Edition</span>
+                                        <p class="text-xs text-pink-500 font-medium">Bunga rajut & pipe cleaner handmade</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-xs text-gray-400 line-through">Rp 85.000</span>
+                                        <span class="block font-display font-bold text-pink-600 text-lg">Rp 65.000</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Sticker Decorative Box -->
+                            <div class="absolute -bottom-6 -left-6 bg-pink-100 border-2 border-pink-300 p-3 rounded-2xl shadow-lg transform -rotate-6 hidden sm:flex items-center gap-3">
+                                <div class="text-2xl">🎀</div>
+                                <div class="text-xs">
+                                    <p class="font-bold text-pink-700 font-display">Special Gift Box</p>
+                                    <p class="text-gray-500">Termasuk pita & kartuwisuda/ultah</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH & DISCOVERY BAR -->
+        <section class="py-6 bg-pink-100/60 border-y border-pink-200">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="bg-white p-2 sm:p-3 rounded-full border-2 border-pink-300 shadow-md flex items-center gap-2">
+                    <div class="pl-3 text-pink-400 text-lg sm:text-xl">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input type="text" id="quick-search-input" placeholder="Gift ideas for someone special... (contoh: buket, keychain, pot)" class="w-full bg-transparent border-none focus:outline-none text-sm sm:text-base text-gray-700 placeholder-pink-300 font-medium" oninput="handleQuickSearch(this.value)">
+                    <button onclick="scrollToCatalog()" class="bg-pink-400 hover:bg-pink-500 text-white font-display text-xs sm:text-sm px-5 py-2.5 rounded-full transition shadow-sm whitespace-nowrap">
+                        Cari Bunga ♡
+                    </button>
+                </div>
+                <p class="text-center text-xs font-handwriting text-pink-600 font-bold text-base mt-2">
+                    💡 "Maybe this is what you're looking for..." Coba ketik "Mini Bouquet" atau "Pot Flower"
+                </p>
+            </div>
+        </section>
+
+        <!-- WHAT WE MAKE SECTION -->
+        <section id="what-we-make" class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <div class="inline-block font-handwriting text-2xl text-pink-500 font-bold mb-1">~ Creative Craft Collection ~</div>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-gray-800 flex items-center justify-center gap-2">
+                        WHAT WE MAKE <span class="text-pink-500">♡</span>
+                    </h2>
+                    <p class="text-gray-500 mt-2 text-sm sm:text-base max-w-lg mx-auto">Pilih jenis bunga handmade impianmu, dari yang mungil hingga buket besar yang mewah!</p>
+                </div>
+
+                <!-- Category Cards Grid -->
+                <div id="category-cards-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRODUCT CATALOG SECTION -->
+        <section id="catalog" class="py-16 bg-white/60 border-t border-pink-200 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="font-handwriting text-2xl text-pink-500 font-bold">~ Pilihan Bunga Paling Favorit ~</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-gray-800">
+                            KATALOG PRODUK <span class="text-pink-500">🌸</span>
+                        </h2>
+                    </div>
+
+                    <!-- Filter & Sort Controls -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <!-- Category Filter Dropdown -->
+                        <div class="relative">
+                            <select id="category-filter" onchange="filterProducts()" class="bg-white border-2 border-pink-300 text-gray-700 text-sm rounded-xl px-4 py-2.5 pr-8 focus:outline-none focus:border-pink-500 font-medium shadow-sm">
+                                <option value="ALL">Semua Kategori</option>
+                                <option value="Single Bouquet">Single Bouquet</option>
+                                <option value="Mini Bouquet">Mini Bouquet</option>
+                                <option value="Elegant Bouquet">Elegant Bouquet</option>
+                                <option value="Large Bouquet">Large Bouquet</option>
+                                <option value="Pot Flower">Pot Flower</option>
+                                <option value="Keychain">Keychain</option>
+                                <option value="Gift / Custom">Gift / Custom</option>
+                            </select>
+                        </div>
+
+                        <!-- Price Sorting -->
+                        <div class="relative">
+                            <select id="sort-filter" onchange="filterProducts()" class="bg-white border-2 border-pink-300 text-gray-700 text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-pink-500 font-medium shadow-sm">
+                                <option value="default">Urutkan: Rekomendasi</option>
+                                <option value="low-high">Harga: Terendah ke Tertinggi</option>
+                                <option value="high-low">Harga: Tertinggi ke Terendah</option>
+                                <option value="name-asc">Nama: A - Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid Container -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <!-- Empty State Message -->
+                <div id="empty-catalog" class="hidden text-center py-16">
+                    <div class="text-5xl mb-3">🔍🌸</div>
+                    <h3 class="font-display text-xl text-gray-700 font-bold">Produk tidak ditemukan</h3>
+                    <p class="text-gray-500 text-sm mt-1">Coba gunakan kata kunci lain atau ubah filter kategori.</p>
+                    <button onclick="resetFilters()" class="mt-4 bg-pink-400 text-white font-display text-xs px-5 py-2 rounded-full shadow-sm">
+                        Reset Filter
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CUSTOM ORDER SECTION -->
+        <section id="custom-order" class="py-16 bg-pink-100/80 border-y border-pink-200 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="paper-card p-6 sm:p-10 shadow-paper-lg">
+                    <div class="washi-tape"></div>
+                    
+                    <div class="text-center mb-8">
+                        <span class="font-handwriting text-2xl text-pink-500 font-bold">~ Punya Ide Bunga Impian? ~</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl text-gray-800 mt-1">
+                            MAKE IT YOURS <span class="text-pink-500">♡</span>
+                        </h2>
+                        <p class="text-gray-600 text-sm sm:text-base mt-2">
+                            Ingin request kombinasi warna khusus, karakter unik, atau bentuk khusus? Isi form di bawah untuk diskusikan langsung via WhatsApp!
+                        </p>
+                    </div>
+
+                    <!-- Custom Order Form -->
+                    <form id="custom-order-form" onsubmit="submitCustomOrder(event)" class="space-y-4 text-sm">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block font-bold text-gray-700 mb-1">Nama Lengkap *</label>
+                                <input type="text" id="co-name" required placeholder="Contoh: Syafa Audya" class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-gray-700 mb-1">Nomor WhatsApp *</label>
+                                <input type="tel" id="co-wa" required placeholder="Contoh: 08123456789" class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block font-bold text-gray-700 mb-1">Jenis / Kategori Bunga</label>
+                                <select id="co-type" class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                                    <option value="Custom Bouquet">Custom Bouquet (Buket)</option>
+                                    <option value="Custom Pot Flower">Custom Pot Flower (Pot)</option>
+                                    <option value="Custom Keychain">Custom Keychain / Gantungan Kunci</option>
+                                    <option value="Custom Gift Box Set">Custom Gift Box Set</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-bold text-gray-700 mb-1">Perkiraan Budget (Rp)</label>
+                                <input type="text" id="co-budget" placeholder="Contoh: Rp 50.000 - Rp 150.000" class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block font-bold text-gray-700 mb-1">Keinginan Warna Utama</label>
+                                <input type="text" id="co-color" placeholder="Contoh: Soft Pink + Cream + Light Blue" class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-gray-700 mb-1">Tanggal Dibutuhkan *</label>
+                                <input type="date" id="co-date" required class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-gray-700 mb-1">Untuk Acara / Momen Apa?</label>
+                            <input type="text" id="co-occasion" placeholder="Contoh: Wisuda, Ulang Tahun, Anniversary, Self-Reward" class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-gray-700 mb-1">Catatan Tambahan & Detail Request</label>
+                            <textarea id="co-notes" rows="3" placeholder="Tuliskan detail khusus, karakter bunga favorit, atau ucapan yang ingin disertakan..." class="w-full bg-pink-50/50 border border-pink-300 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+                        </div>
+
+                        <div class="pt-2 text-center">
+                            <button type="submit" class="w-full sm:w-auto bg-pink-400 hover:bg-pink-500 text-white font-display font-bold px-10 py-4 rounded-2xl shadow-paper hover:shadow-none transition-all flex items-center justify-center gap-2 mx-auto">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                SEND MY REQUEST ♡
+                            </button>
+                            <p class="text-xs text-gray-400 mt-2">Form ini akan membuka aplikasi WhatsApp secara otomatis dengan format pesan rapi.</p>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOW TO ORDER SECTION -->
+        <section id="how-to-order" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <span class="font-handwriting text-2xl text-pink-500 font-bold">~ Langkah Mudah Pesan Bunga ~</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-gray-800">
+                        HOW TO ORDER <span class="text-pink-500">♡</span>
+                    </h2>
+                </div>
+
+                <!-- Timeline Step Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Step 1 -->
+                    <div class="paper-card p-6 border-l-4 border-l-pink-400">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-display text-pink-400 font-bold text-2xl">01</span>
+                            <span class="text-3xl">🌸</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-gray-800">Choose Your Flowers</h3>
+                        <p class="text-gray-600 text-sm mt-1">Pilih produk buket atau gift favoritmu dari katalog Syafiora Florist.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="paper-card p-6 border-l-4 border-l-pink-400">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-display text-pink-400 font-bold text-2xl">02</span>
+                            <span class="text-3xl">🎨</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-gray-800">Customize Your Order</h3>
+                        <p class="text-gray-600 text-sm mt-1">Tentukan warna wrap, pilihan kartu ucapan, atau request khusus sesuai keinginan.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="paper-card p-6 border-l-4 border-l-pink-400">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-display text-pink-400 font-bold text-2xl">03</span>
+                            <span class="text-3xl">💬</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-gray-800">Contact Syafiora</h3>
+                        <p class="text-gray-600 text-sm mt-1">Klik tombol Order via WhatsApp untuk terhubung langsung dengan admin kami.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="paper-card p-6 border-l-4 border-l-pink-400">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-display text-pink-400 font-bold text-2xl">04</span>
+                            <span class="text-3xl">📝</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-gray-800">Confirm Your Order</h3>
+                        <p class="text-gray-600 text-sm mt-1">Admin akan mengonfirmasi rincian pesanan, tanggal pengerjaan, & ketersediaan slot.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="paper-card p-6 border-l-4 border-l-pink-400">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-display text-pink-400 font-bold text-2xl">05</span>
+                            <span class="text-3xl">💳</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-gray-800">Payment Process</h3>
+                        <p class="text-gray-600 text-sm mt-1">Lakukan pembayaran via transfer/E-wallet agar bungamu siap dibuat dengan penuh kasih sayang.</p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="paper-card p-6 border-l-4 border-l-pink-400">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-display text-pink-500 font-bold text-2xl">06</span>
+                            <span class="text-3xl">✨</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-gray-800">Your Flowers Ready ♡</h3>
+                        <p class="text-gray-600 text-sm mt-1">Bunga handmade siap dikirim atau diambil untuk membahagiakan penerima!</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL SECTION -->
+        <section id="testimonials" class="py-16 bg-pink-50/80 border-t border-pink-200 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <span class="font-handwriting text-2xl text-pink-500 font-bold">~ Pesan Manis Dari Customer ~</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-gray-800">
+                        WHAT THEY SAY <span class="text-pink-500">♡</span>
+                    </h2>
+                </div>
+
+                <!-- Tilted Scrapbook Notes Grid -->
+                <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <span class="font-handwriting text-2xl text-pink-500 font-bold">~ Momen Indah Bersama Syafiora ~</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-gray-800">
+                        A LITTLE BLOOM GALLERY <span class="text-pink-500">🌸</span>
+                    </h2>
+                </div>
+
+                <!-- Gallery Masonry / Grid -->
+                <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-16 bg-white/80 border-t border-pink-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="paper-card p-6 sm:p-12 relative">
+                    <div class="washi-tape"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-5 text-center">
+                            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-pink-300 p-1 bg-pink-50 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=80" alt="Syafiora Florist Crafts" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/400x400/fce7f3/ec4899?text=Syafiora'">
+                            </div>
+                            <span class="inline-block mt-3 font-handwriting text-2xl font-bold text-pink-600">Handmade with heart ♡</span>
+                        </div>
+
+                        <div class="md:col-span-7 space-y-4">
+                            <h2 class="font-display font-bold text-3xl text-gray-800">
+                                HELLO FROM SYAFIORA <span class="text-pink-500">♡</span>
+                            </h2>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                                Syafiora Florist adalah handmade flower & gift brand yang menghadirkan rangkaian bunga unik dan penuh perhatian untuk berbagai momen manismu.
+                            </p>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                                Setiap kelopak dan pita dibuat secara teliti untuk memastikan hadiah yang kamu berikan terasa pribadi, hangat, serta bertahan lama tanpa layu.
+                            </p>
+                            <div class="pt-2 flex items-center gap-4">
+                                <div class="stamp-badge">
+                                    <span class="text-xs font-bold text-pink-600 font-display">Crafted in ID 🇮🇩</span>
+                                </div>
+                                <span class="text-xs text-gray-400 font-medium">Bukan bunga asli biasa — ini karya seni handmade!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="py-16 bg-pink-100/50 border-t border-pink-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-10">
+                    <span class="font-handwriting text-2xl text-pink-500 font-bold">~ Frequently Asked Questions ~</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-gray-800">
+                        PERTANYAAN UMUM <span class="text-pink-500">❓</span>
+                    </h2>
+                </div>
+
+                <!-- Accordion Items -->
+                <div class="space-y-4" id="faq-accordion">
+                    
+                    <div class="paper-card overflow-hidden">
+                        <button onclick="toggleFaq(1)" class="w-full text-left p-4 sm:p-5 font-display font-bold text-gray-800 flex justify-between items-center text-sm sm:text-base">
+                            <span>Apakah bisa custom warna dan model bunga?</span>
+                            <span id="faq-icon-1" class="text-pink-500 text-xl font-bold">+</span>
+                        </button>
+                        <div id="faq-ans-1" class="hidden px-5 pb-5 text-gray-600 text-sm border-t border-pink-100 pt-3">
+                            Sangat bisa! Kamu bisa request warna wrapping, kombinasi warna bunga, hingga kartu ucapan sesuai selera. Cukup gunakan form Custom Order atau chat admin WhatsApp.
+                        </div>
+                    </div>
+
+                    <div class="paper-card overflow-hidden">
+                        <button onclick="toggleFaq(2)" class="w-full text-left p-4 sm:p-5 font-display font-bold text-gray-800 flex justify-between items-center text-sm sm:text-base">
+                            <span>Berapa lama proses pembuatan (PO)?</span>
+                            <span id="faq-icon-2" class="text-pink-500 text-xl font-bold">+</span>
+                        </button>
+                        <div id="faq-ans-2" class="hidden px-5 pb-5 text-gray-600 text-sm border-t border-pink-100 pt-3">
+                            Estimasi pengerjaan standar adalah 1-3 hari kerja tergantung tingkat kerumitan dan antrean pesanan. Sebaiknya pesan beberapa hari sebelum hari H ya!
+                        </div>
+                    </div>
+
+                    <div class="paper-card overflow-hidden">
+                        <button onclick="toggleFaq(3)" class="w-full text-left p-4 sm:p-5 font-display font-bold text-gray-800 flex justify-between items-center text-sm sm:text-base">
+                            <span>Apakah menerima Same-Day / Rush Order?</span>
+                            <span id="faq-icon-3" class="text-pink-500 text-xl font-bold">+</span>
+                        </button>
+                        <div id="faq-ans-3" class="hidden px-5 pb-5 text-gray-600 text-sm border-t border-pink-100 pt-3">
+                            Untuk beberapa produk ready stock (ready to ship), kami bisa melayani pemesanan mendadak. Silakan konsultasi via WhatsApp untuk cek ketersediaan stok hari ini.
+                        </div>
+                    </div>
+
+                    <div class="paper-card overflow-hidden">
+                        <button onclick="toggleFaq(4)" class="w-full text-left p-4 sm:p-5 font-display font-bold text-gray-800 flex justify-between items-center text-sm sm:text-base">
+                            <span>Bagaimana proses pengiriman & apakah aman?</span>
+                            <span id="faq-icon-4" class="text-pink-500 text-xl font-bold">+</span>
+                        </button>
+                        <div id="faq-ans-4" class="hidden px-5 pb-5 text-gray-600 text-sm border-t border-pink-100 pt-3">
+                            Semua rangkaian dipacking aman menggunakan dus khusus & bubble wrap tebal agar buket tetap mengembang indah saat sampai di tujuan.
+                        </div>
+                    </div>
+
+                    <div class="paper-card overflow-hidden">
+                        <button onclick="toggleFaq(5)" class="w-full text-left p-4 sm:p-5 font-display font-bold text-gray-800 flex justify-between items-center text-sm sm:text-base">
+                            <span>Metode pembayaran apa saja yang tersedia?</span>
+                            <span id="faq-icon-5" class="text-pink-500 text-xl font-bold">+</span>
+                        </button>
+                        <div id="faq-ans-5" class="hidden px-5 pb-5 text-gray-600 text-sm border-t border-pink-100 pt-3">
+                            Kami menerima pembayaran via Transfer Bank (BCA/Mandiri/BRI) dan E-Wallet (Gopay, OVO, Dana, ShopeePay).
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-16 text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                
+                <div class="bg-gradient-to-r from-pink-200 via-pink-100 to-pink-200 p-8 sm:p-12 rounded-3xl border-2 border-pink-300 shadow-xl relative overflow-hidden">
+                    <div class="absolute -top-6 -right-6 text-6xl opacity-20">🌺</div>
+                    
+                    <span class="font-handwriting text-3xl text-pink-600 font-bold">~ Let's connect ~</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-gray-800 mt-1 mb-4">
+                        LET'S MAKE SOMEONE BLOOM <span class="text-pink-500">♡</span>
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base max-w-lg mx-auto mb-8">
+                        Siap memberikan kejutan manis untuk teman, kekasih, atau dirimu sendiri? Hubungi kami langsung!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://wa.me/6289612868190?text=Halo%20Syafiora%20Florist!%20%F0%9F%A3%B7%20Saya%20ingin%20tanya-tanya%20produk%20bunga." target="_blank" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-display font-bold px-8 py-4 rounded-2xl shadow-paper hover:shadow-none transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            CHAT ON WHATSAPP
+                        </a>
+                        <a href="https://instagram.com/syafiora_florist" target="_blank" class="w-full sm:w-auto bg-pink-500 hover:bg-pink-600 text-white font-display font-bold px-8 py-4 rounded-2xl shadow-paper hover:shadow-none transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                            VISIT OUR INSTAGRAM
+                        </a>
+                    </div>
+
+                    <div class="mt-6 text-xs text-pink-700 font-bold space-y-1">
+                        <p>📲 WhatsApp: 089612868190</p>
+                        <p>📸 Instagram: @syafiora_florist</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8 border-t-4 border-pink-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-gray-800">
+                
+                <!-- Brand Summary -->
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">🌸</span>
+                        <span class="font-display font-bold text-2xl text-pink-300">SYAFIORA FLORIST</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm">
+                        "Handmade flowers for your favorite people — or yourself ♡" <br>
+                        Bunga handmade unik, cantik, dan penuh kesan mendalam.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-4 space-y-2 text-sm">
+                    <h4 class="font-display font-bold text-pink-300 text-base mb-3">Quick Links</h4>
+                    <div class="grid grid-cols-2 gap-2 text-gray-400">
+                        <a href="#home" class="hover:text-pink-300">Home</a>
+                        <a href="#catalog" class="hover:text-pink-300">Katalog</a>
+                        <a href="#about" class="hover:text-pink-300">Tentang Kami</a>
+                        <a href="#testimonials" class="hover:text-pink-300">Testimoni</a>
+                        <a href="#faq" class="hover:text-pink-300">FAQ</a>
+                        <a href="#custom-order" class="hover:text-pink-300">Custom Order</a>
+                    </div>
+                </div>
+
+                <!-- Socials -->
+                <div class="md:col-span-3 space-y-2 text-sm">
+                    <h4 class="font-display font-bold text-pink-300 text-base mb-3">Hubungi Kami</h4>
+                    <p class="text-gray-400">WhatsApp: <a href="https://wa.me/6289612868190" class="text-pink-300 underline">089612868190</a></p>
+                    <p class="text-gray-400">Instagram: <a href="https://instagram.com/syafiora_florist" class="text-pink-300 underline">@syafiora_florist</a></p>
+                </div>
+
+            </div>
+
+            <div class="pt-6 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <p>© 2026 Syafiora Florist. All rights reserved.</p>
+                <p class="font-handwriting text-lg text-pink-400 font-bold">Made with love for flower lovers ♡</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="product-modal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl border-2 border-pink-300 max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-600 font-bold flex items-center justify-center transition">
+                ✕
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Modal Product Image -->
+                <div>
+                    <div class="aspect-square rounded-2xl overflow-hidden bg-pink-50 border border-pink-200">
+                        <img id="modal-img" src="" alt="Product" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Modal Product Info -->
+                <div class="space-y-4">
+                    <div>
+                        <span id="modal-category" class="inline-block text-xs font-bold text-pink-500 bg-pink-100 px-3 py-1 rounded-full mb-1">
+                            Kategori
+                        </span>
+                        <h3 id="modal-title" class="font-display font-bold text-2xl text-gray-800">
+                            Nama Produk
+                        </h3>
+                        <p id="modal-price" class="text-xl font-display font-bold text-pink-600 mt-1">
+                            Rp 0
+                        </p>
+                    </div>
+
+                    <p id="modal-desc" class="text-gray-600 text-sm leading-relaxed">
+                        Deskripsi singkat produk akan muncul di sini.
+                    </p>
+
+                    <!-- Order Custom Options inside Modal -->
+                    <div class="space-y-3 pt-2 border-t border-pink-100 text-xs">
+                        <div>
+                            <label class="block font-bold text-gray-700 mb-1">Pilihan Warna Wrapping / Bunga</label>
+                            <input type="text" id="modal-color-opt" placeholder="Contoh: Soft Pink, Sage Green, Mix" class="w-full bg-pink-50 border border-pink-300 rounded-lg p-2 text-xs">
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-1/2">
+                                <label class="block font-bold text-gray-700 mb-1">Jumlah</label>
+                                <input type="number" id="modal-qty" value="1" min="1" class="w-full bg-pink-50 border border-pink-300 rounded-lg p-2 text-xs">
+                            </div>
+                            <div class="w-1/2">
+                                <label class="block font-bold text-gray-700 mb-1">Tgl Dibutuhkan</label>
+                                <input type="date" id="modal-req-date" class="w-full bg-pink-50 border border-pink-300 rounded-lg p-2 text-xs">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-gray-700 mb-1">Pesan Ucapan di Kartu (Free)</label>
+                            <input type="text" id="modal-note-opt" placeholder="Contoh: Happy Graduation & Happy Birthday!" class="w-full bg-pink-50 border border-pink-300 rounded-lg p-2 text-xs">
+                        </div>
+                    </div>
+
+                    <!-- Direct WA Order Button -->
+                    <button onclick="orderViaWhatsAppFromModal()" class="w-full bg-green-500 hover:bg-green-600 text-white font-display font-bold py-3.5 rounded-xl shadow-paper hover:shadow-none transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Pesan via WhatsApp Now ♡
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CMS / ADMIN MANAGEMENT MODAL -->
+    <div id="admin-modal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl border-2 border-pink-300 max-w-3xl w-full p-6 relative shadow-2xl max-h-[90vh] overflow-y-auto text-sm">
+            
+            <button onclick="toggleAdminModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-600 font-bold flex items-center justify-center transition">
+                ✕
+            </button>
+
+            <div class="flex items-center gap-2 mb-4 pb-2 border-b border-pink-200">
+                <span class="text-2xl">⚙️</span>
+                <div>
+                    <h3 class="font-display font-bold text-xl text-gray-800">Syafiora Content Management Preview</h3>
+                    <p class="text-xs text-gray-500">Kelola Produk & Data Toko (Disimpan lokal / Siap dihubungkan ke Supabase/Firebase)</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex gap-2 mb-4 border-b border-pink-100 pb-2 font-display text-xs">
+                <button onclick="switchAdminTab('products')" id="tab-btn-products" class="px-3 py-1.5 rounded-lg bg-pink-400 text-white font-bold">
+                    📦 Kelola Produk
+                </button>
+                <button onclick="switchAdminTab('info')" id="tab-btn-info" class="px-3 py-1.5 rounded-lg bg-pink-100 text-pink-700">
+                    💡 Petunjuk Integrasi CMS/Database
+                </button>
+            </div>
+
+            <!-- Admin Tab: Products -->
+            <div id="admin-tab-products" class="space-y-4">
+                <div class="p-4 bg-pink-50 rounded-2xl border border-pink-200 space-y-3">
+                    <h4 class="font-display font-bold text-pink-700">Tambah / Quick Update Produk Dummy</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <input type="text" id="new-p-name" placeholder="Nama Produk" class="p-2 border rounded-lg">
+                        <input type="number" id="new-p-price" placeholder="Harga (contoh: 45000)" class="p-2 border rounded-lg">
+                        <select id="new-p-cat" class="p-2 border rounded-lg">
+                            <option value="Single Bouquet">Single Bouquet</option>
+                            <option value="Mini Bouquet">Mini Bouquet</option>
+                            <option value="Elegant Bouquet">Elegant Bouquet</option>
+                            <option value="Large Bouquet">Large Bouquet</option>
+                            <option value="Pot Flower">Pot Flower</option>
+                            <option value="Keychain">Keychain</option>
+                            <option value="Gift / Custom">Gift / Custom</option>
+                        </select>
+                        <input type="text" id="new-p-img" placeholder="URL Foto (Unsplash/Imgur)" class="p-2 border rounded-lg">
+                    </div>
+                    <input type="text" id="new-p-desc" placeholder="Deskripsi Singkat" class="w-full p-2 border rounded-lg text-xs">
+                    <button onclick="addNewProductFromAdmin()" class="bg-pink-500 text-white font-display text-xs px-4 py-2 rounded-xl">
+                        + Tambah Ke Katalog
+                    </button>
+                </div>
+
+                <!-- Existing Items Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-gray-600">
+                        <thead class="bg-pink-100 text-pink-800 font-display">
+                            <tr>
+                                <th class="p-2">Nama</th>
+                                <th class="p-2">Kategori</th>
+                                <th class="p-2">Harga</th>
+                                <th class="p-2 text-right">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-product-table-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Admin Tab: Backend Info -->
+            <div id="admin-tab-info" class="hidden space-y-3 text-xs text-gray-600">
+                <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl">
+                    <h4 class="font-bold text-amber-800 text-sm mb-1">📌 Catatan Pengembang / Database Integration:</h4>
+                    <p class="leading-relaxed">
+                        Data produk, testimoni, dan galeri di website ini dikelola menggunakan variabel JavaScript terpisah (`const PRODUCTS`, `const TESTIMONIALS`, dll) dan tersimpan di `localStorage` peramban.
+                    </p>
+                    <p class="mt-2 leading-relaxed">
+                        Untuk mengubahnya menjadi **CMS Full Backend Realtime**, pemilik dapat mengintegrasikan:
+                    </p>
+                    <ul class="list-disc pl-5 mt-1 space-y-1 font-semibold">
+                        <li>Supabase / Firebase Firestore untuk tabel `products`, `testimonials`, `gallery`.</li>
+                        <li>Authentication Supabase Auth untuk Login Pemilik Toko.</li>
+                        <li>Storage Bucket Supabase/Firebase untuk Upload Foto Produk langsung dari HP.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
