@@ -2,7 +2,7 @@
    SYAFIORA FLORIST — SUPABASE CMS
    ========================================================================== */
 
-const SUPABASE_URL = 'https://mdafjkmatguztjbgjgzl.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://mdafjkmatguztjbgjgzl.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_5BZFHzT_HdOhgOMCZEbhaA_coWPjkhn';
 const STORAGE_BUCKET = 'syafiora-images';
 
