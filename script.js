@@ -2,8 +2,8 @@
    SYAFIORA FLORIST — SUPABASE CMS
    ========================================================================== */
 
-const SUPABASE_URL = 'sb_publishable_5BZFHzT_HdOhgOMCZEbhaA_coWPjkhn';
-const SUPABASE_ANON_KEY = 'sb_secret_103S3EErh102X_V_Ruq_2g_gDEyHaIx';
+const SUPABASE_URL = 'https://mdafjkmatguztjbgjgzl.supabase.co/rest/v1/';
+const SUPABASE_ANON_KEY = 'sb_publishable_5BZFHzT_HdOhgOMCZEbhaA_coWPjkhn';
 const STORAGE_BUCKET = 'syafiora-images';
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
